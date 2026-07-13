@@ -3,12 +3,15 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MovieEntity } from './entities/movie.entity';
 import { Repository } from 'typeorm';
 import { MovieDto } from './dto/movie.dto';
+import { ActorEntity } from 'src/actor/entities/actor.entity';
 
 @Injectable()
 export class MovieService {
   constructor(
     @InjectRepository(MovieEntity)
     private readonly movieRepository: Repository<MovieEntity>,
+    @InjectRepository(ActorEntity)
+    private readonly actorRepository: Repository<ActorEntity>,
   ) {}
 
   async findAll(): Promise<MovieEntity[]> {
