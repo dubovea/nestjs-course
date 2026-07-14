@@ -1,12 +1,16 @@
 import {
   IsArray,
+  ArrayNotEmpty,
   IsInt,
   IsNotEmpty,
+  IsOptional,
   IsString,
+  IsUrl,
   IsUUID,
   Max,
   MaxLength,
   Min,
+  IsBoolean,
 } from 'class-validator';
 
 export class MovieDto {
@@ -23,5 +27,14 @@ export class MovieDto {
 
   @IsArray()
   @IsUUID('4', { each: true })
-  actorIds?: string[];
+  @ArrayNotEmpty()
+  actorIds!: string[];
+
+  @IsOptional()
+  @IsUrl()
+  posterUrl?: string;
+
+  @IsBoolean()
+  @IsOptional()
+  isAvailable?: boolean;
 }

@@ -11,7 +11,7 @@ import {
 import { MovieService } from './movie.service';
 import { MovieDto } from './dto/movie.dto';
 
-@Controller('movie')
+@Controller('movies')
 export class MovieController {
   constructor(private readonly movieService: MovieService) {}
 
