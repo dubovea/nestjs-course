@@ -1559,6 +1559,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/adapter-pg@npm:^7.8.0":
+  version: 7.8.0
+  resolution: "@prisma/adapter-pg@npm:7.8.0"
+  dependencies:
+    "@prisma/driver-adapter-utils": "npm:7.8.0"
+    "@types/pg": "npm:^8.16.0"
+    pg: "npm:^8.16.3"
+    postgres-array: "npm:3.0.4"
+  checksum: 10c0/5cc759ef634336b1264dcfd1aa34674b57d7e8817efc31a245acc28209ad8df822d5c8694b6693fbab5730b03310af4b1acd02aa1bf8f524e051a72d66d7dde3
+  languageName: node
+  linkType: hard
+
 "@prisma/client-runtime-utils@npm:7.8.0":
   version: 7.8.0
   resolution: "@prisma/client-runtime-utils@npm:7.8.0"
@@ -1631,6 +1643,15 @@ __metadata:
     valibot: "npm:1.2.0"
     zeptomatch: "npm:2.1.0"
   checksum: 10c0/9494f86f02ce820ea959cb20ada0d462940ef212aa32c9e68556fa47271ecca14b71c3cb26a7dc477c1ae8f618156ec16dd5ab42b9d46c627240e152e0076d66
+  languageName: node
+  linkType: hard
+
+"@prisma/driver-adapter-utils@npm:7.8.0":
+  version: 7.8.0
+  resolution: "@prisma/driver-adapter-utils@npm:7.8.0"
+  dependencies:
+    "@prisma/debug": "npm:7.8.0"
+  checksum: 10c0/d8db769e63df3072942b1369641e9eba4a00607dfce66ddce822992d0bbd77507acd6a08b6d7ee32cdab7f27767f8e86afa1016e347f2732362e71337330d1ec
   languageName: node
   linkType: hard
 
@@ -2118,7 +2139,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/pg@npm:^8":
+"@types/pg@npm:^8, @types/pg@npm:^8.16.0":
   version: 8.20.0
   resolution: "@types/pg@npm:8.20.0"
   dependencies:
@@ -5997,6 +6018,7 @@ __metadata:
     "@nestjs/schematics": "npm:^11.0.0"
     "@nestjs/testing": "npm:^11.0.1"
     "@nestjs/typeorm": "npm:^11.0.3"
+    "@prisma/adapter-pg": "npm:^7.8.0"
     "@prisma/client": "npm:^7.8.0"
     "@types/express": "npm:^5.0.0"
     "@types/jest": "npm:^30.0.0"
@@ -6380,7 +6402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg@npm:^8.22.0":
+"pg@npm:^8.16.3, pg@npm:^8.22.0":
   version: 8.22.0
   resolution: "pg@npm:8.22.0"
   dependencies:
@@ -6470,6 +6492,13 @@ __metadata:
   version: 8.0.0
   resolution: "pluralize@npm:8.0.0"
   checksum: 10c0/2044cfc34b2e8c88b73379ea4a36fc577db04f651c2909041b054c981cd863dd5373ebd030123ab058d194ae615d3a97cfdac653991e499d10caf592e8b3dc33
+  languageName: node
+  linkType: hard
+
+"postgres-array@npm:3.0.4":
+  version: 3.0.4
+  resolution: "postgres-array@npm:3.0.4"
+  checksum: 10c0/47f3e648da512bacdd6a5ed55cf770605ec271330789faeece0fd13805a49f376d6e5c9e0e353377be11a9545e727dceaa2473566c505432bf06366ccd04c6b2
   languageName: node
   linkType: hard
 
