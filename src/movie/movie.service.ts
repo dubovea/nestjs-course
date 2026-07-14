@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MovieEntity } from './entities/movie.entity';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { MovieDto } from './dto/movie.dto';
 import { ActorEntity } from 'src/actor/entities/actor.entity';
 
@@ -23,7 +23,12 @@ export class MovieService {
   }
 
   async findOne(id: string): Promise<MovieEntity> {
-    const movie = await this.movieRepository.findOneBy({ id });
+    const movie = await this.movieRepository.findOne({
+      where: {
+        id,
+      },
+      relations: { actors: true },
+    });
 
     if (!movie) {
       throw new NotFoundException(`Movie with ID ${id} not found`);
@@ -33,7 +38,28 @@ export class MovieService {
   }
 
   async create(dto: MovieDto): Promise<MovieEntity> {
-    const newMovie = this.movieRepository.create(dto);
+    const { title, releaseYear, actorIds } = dto;
+
+    if (!actorIds || actorIds.length === 0) {
+      throw new NotFoundException(`Не передан список актёров`);
+    }
+
+    const actors = await this.actorRepository.find({
+      where: {
+        id: In(actorIds),
+      },
+    });
+
+    if (!actors || actorIds.length === 0) {
+      throw new NotFoundException(`Один или несколько актеров не найдены`);
+    }
+
+    const newMovie = this.movieRepository.create({
+      title,
+      releaseYear,
+      actors,
+    });
+
     return await this.movieRepository.save(newMovie);
   }
 
