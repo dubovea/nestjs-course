@@ -4,9 +4,9 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
-import { ActorModule } from './actor/actor.module';
-import { MovieModule } from './movie/movie.module';
-import { ReviewModule } from './review/review.module';
+import { ActorModule } from './prisma/actor/actor.module';
+import { MovieModule } from './prisma/movie/movie.module';
+import { ReviewModule } from './prisma/review/review.module';
 
 @Module({
   imports: [
